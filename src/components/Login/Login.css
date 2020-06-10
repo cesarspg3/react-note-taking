@@ -1,0 +1,28 @@
+.loginContainer {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 34px;
+    box-shadow: 0px -2px 8px rgba(0,0,0,0.1);
+}
+
+.inputLogin {
+    margin-bottom: 16px !important;
+}
+
+.loginError {
+    margin-top: 16px;
+    color: red;
+}
+
+.iconLogin {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 15%;
+}

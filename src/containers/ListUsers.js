@@ -1,0 +1,22 @@
+import { connect } from 'react-redux';
+import ListUsers from '../components/ListUsers';
+import {  } from '../actions/creators';
+import { getUsers } from '../thunks';
+
+const mapStateToProps = state => ({
+  token: state.login.token,
+  loading: state.listUsers.loading,
+  error: state.listUsers.error,
+  users: state.listUsers.users,
+})
+
+const mapDispatchToProps = {
+  getUsers
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ListUsers)
+  
+  
