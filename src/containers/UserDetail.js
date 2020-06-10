@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import UserDetail from '../components/UserDetail';
-import {  } from '../actions/creators';
 import { updateUser, deleteUser } from '../thunks';
 
 const mapStateToProps = state => ({
