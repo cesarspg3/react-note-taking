@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import Logout from './../../containers/Logout';
 import './userDetail.scss';
 
 export default function UserDetail(props){
@@ -68,7 +69,7 @@ export default function UserDetail(props){
 
 				<div className="userDetailError"></div>
                 </div>
-
+                <Logout />
             </div>
 	    );
 	
