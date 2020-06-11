@@ -26,3 +26,10 @@ The test was coded whit Enzime
 ### `User:` eve.holt@reqres.in
 
 ### `Password:` anyone
+
+## Info
+
+The project was made with react and redux, test with enzyme(not in all project) and in the calls to the api I use axios. <br />
+To the ui I use material ui to save time. <br />
+The endpoints for delete and put user, I have seen that the api dont do it and return a 'code' if you did well, I show it in a alert. <br />
+I put some breakpoints for mobile and tablets in the scss.
