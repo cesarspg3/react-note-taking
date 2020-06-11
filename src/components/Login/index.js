@@ -17,7 +17,7 @@ export default function Login(props){
 	useEffect(() => {
 		const storeageToken = localStorage.getItem('saveMe');
 		if (storeageToken) restoreLogin(storeageToken)
-	}, [])
+	}, [restoreLogin])
 	
 	return token !== null ?
 		<Redirect to='/listUsers' /> :

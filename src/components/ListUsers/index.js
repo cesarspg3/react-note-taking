@@ -12,7 +12,7 @@ export default function ListUsers(props){
 
 	useEffect(() => {
         if (token) getUsers()
-	}, [])
+	}, [token, getUsers])
 
 	const rednerData = [];
 

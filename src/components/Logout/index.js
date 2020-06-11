@@ -10,8 +10,6 @@ export default function Logout(props){
         props.logout()
     }
 
-    console.log(props)
-
 	return (
         <div className='logoutBtn'>
             <Button className='userDetailBtn' variant="contained" onClick={() => { closeSesion() }}>Cerrar sesión</Button>

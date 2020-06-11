@@ -27,7 +27,7 @@ export default function UserDetail(props){
                 setId(id);
             }
         }
-	}, [])
+	}, [token, props.location.state.id, users])
 	  
 	return token === null || !props.location.state.id ?
 		<Redirect to='/login' /> :

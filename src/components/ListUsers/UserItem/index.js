@@ -9,7 +9,7 @@ export default function UserItem({user}){
 	  
 	return (
         <Link className='userItemContainer' to={{pathname:'/userDetail',  state: {id}}}>
-            <div><img className='userItemImg' src={urlImg} /></div>
+            <div><img className='userItemImg' src={urlImg} alt={first_name}/></div>
             <div>
                 <div><span className='UserItemDesc'>Nombre:</span> {first_name}</div>
                 <div><span className='UserItemDesc'>Apellido:</span>: {last_name}</div>
