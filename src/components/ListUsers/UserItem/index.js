@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './userItem.css';
+import './userItem.scss';
 
 export default function UserItem({user}){
 

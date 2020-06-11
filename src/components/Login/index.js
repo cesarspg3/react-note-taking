@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 import laLigaIcon from './../../images/laligaIcon.png'
 
-import './Login.css';
+import './login.scss';
 
 export default function Login(props){
 

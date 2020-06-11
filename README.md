@@ -20,3 +20,9 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 The test was coded whit Enzime
+
+## Login
+
+### `User:` eve.holt@reqres.in
+
+### `Password:` anyone

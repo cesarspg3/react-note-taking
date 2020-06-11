@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import './listUsers.css';
+import './listUsers.scss';
 import UserItem from './UserItem';
 import Logout from './../../containers/Logout';
 

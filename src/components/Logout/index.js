@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-import './logout.css';
+import './logout.scss';
 
 export default function Logout(props){
  

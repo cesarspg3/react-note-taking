@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import './userDetail.css';
+import './userDetail.scss';
 
 export default function UserDetail(props){
 
