@@ -3,7 +3,6 @@ import ListUsers from '../components/ListUsers';
 import { getUsers } from '../thunks';
 
 const mapStateToProps = state => ({
-  token: state.login.token,
   loading: state.listUsers.loading,
   error: state.listUsers.error,
   users: state.listUsers.users,

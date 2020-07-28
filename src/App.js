@@ -4,7 +4,6 @@ import store from './store';
 import { Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import Login from './containers/Login';
 import ListUsers from './containers/ListUsers';
 import UserDetail from './containers/UserDetail';
 
@@ -14,8 +13,7 @@ class App extends Component {
             <Provider store={store}>
                 <div className="App">
                     <Router history={createBrowserHistory()}>
-                        <Route exact path='/' component={Login} />
-                        <Route path='/login' component={Login} />
+                        <Route exact path='/' component={ListUsers} /> {/* esta primera ruta debería de ser un login */}
                         <Route path='/listUsers' component={ListUsers} />
                         <Route path='/userDetail' component={UserDetail} />
                     </Router>

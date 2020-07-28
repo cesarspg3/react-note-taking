@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import UserDetail from '../components/UserDetail';
-import { updateUser, deleteUser } from '../thunks';
+import { getUser } from '../thunks';
+import { goTo } from './../actions/creators';
 
 const mapStateToProps = state => ({
-  token: state.login.token,
-  users: state.listUsers.users,
+  loading: state.userDetail.loading,
+  error: state.userDetail.error,
+  user: state.userDetail.user,
 })
 
 const mapDispatchToProps = {
-  updateUser,
-  deleteUser
+  getUser,
+  goTo
 }
 
 export default connect(

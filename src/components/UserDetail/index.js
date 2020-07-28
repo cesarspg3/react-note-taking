@@ -1,76 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { useEffect } from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@material-ui/core/Grid';
 
-import Logout from './../../containers/Logout';
+import Header from './../../containers/Header';
 import './userDetail.scss';
 
 export default function UserDetail(props){
 
-    const [avatar, setAvatar] = useState('');
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [surname, setSurname] = useState('');
-    const [id, setId] = useState('');
-
-    const { users, token, updateUser, deleteUser } = props;
+    const { getUser, loading, user, goTo } = props;
+    const id = props.location.state.id
 
     useEffect(() => {
-        if ( token || props.location.state.id ) {
-            const user = users.filter(user => user.id === props.location.state.id)[0];
-            if (user) {
-                const { avatar, email, first_name, last_name, id } = user
-                setAvatar(avatar);
-                setEmail(email);
-                setName(first_name);
-                setSurname(last_name);
-                setId(id);
-            }
-        }
-	}, [token, props.location.state.id, users])
-	  
-	return token === null || !props.location.state.id ?
-		<Redirect to='/login' /> :
-		(
-			<div className='userDetailContainer'>
-                <div className='userDetailTitle'>Detalle usuario</div>
-                <div className='userDetailInputsContainer'>
-                    <TextField
-                        className='userDetailInput'
-                        label="avatar"
-                        multiline
-                        value={avatar}
-                          onChange={(e) => {setAvatar(e.target.value)}}
-                        />
-                    <TextField
-                        className='userDetailInput'
-                        label="Email"
-                        multiline
-                        value={email}
-                         onChange={(e) => {setEmail(e.target.value)}}
-                        />
-                    <TextField
-                        className='userDetailInput'
-                        label="Nombre"
-                        multiline
-                        value={name}
-                        onChange={(e) => {setName(e.target.value)}}
-                        />
-                    <TextField
-                        className='userDetailInput'
-                        label="Apellido"
-                        multiline
-                        value={surname}
-                        onChange={(e) => {setSurname(e.target.value)}}
-                        />
-                    <Button className='userDetailBtn' variant="contained" onClick={() => { deleteUser(id, () => {props.history.push('/listUsers')}) }}>Borrar</Button>
-                    <Button className='userDetailBtn' variant="contained" onClick={() => { updateUser(id, () => {props.history.push('/listUsers')}) }}>Editar</Button>
-
-				<div className="userDetailError"></div>
+        getUser(id)
+        goTo('userDetail')
+    }, [getUser, id, goTo])
+    
+	return (
+            <div>
+                <Header history={props.history}/>
+                <div className='userDetailContainer'>
+                    <div className='userDetailTitle'>Detalle del usuario</div>
+                    {loading ? 
+                        <div className='loader'><CircularProgress /></div>
+                    : (
+                        <div>
+                            <Grid container className='userDetailList'>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Nombre:</span> {user.name}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Teléfono:</span> {user.phone}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Nombre de usuario:</span> {user.username}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Website:</span> {user.website}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>email:</span> {user.email}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Compañía:</span> {user.company.name}
+                                </Grid>
+                                <Grid item xs={12} sm={6} lg={4} className='userDetailData'>
+                                    <span className='userDetailDesc'>Ciudad:</span> {user.address.city}
+                                </Grid>
+                            </Grid>
+                            <div className="userDetailError"></div>
+                        </div>    
+                    )}
                 </div>
-                <Logout />
             </div>
+
 	    );
 	
 }

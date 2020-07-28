@@ -2,39 +2,33 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 66px;
+    margin-top: 33px;
     background-color: #f8f8f8;
     border-radius: 5px;
     box-shadow: 0px -2px 8px rgba(0,0,0,0.1);
 }
 
-.userDetailInputsContainer {
-    display: flex;
-    flex-direction: column;
+.userDetailTitle {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.userDetailList {
     padding: 16px;
 }
 
-.userDetailInput {
-    margin-bottom: 16px !important;
+.userDetailDesc {
+    font-weight: bold;
 }
 
-.userDetailTitle {
-    margin-left: 16px;
-    padding-top: 16px;
-    font-weight: bold;
+.userDetailData {
+    padding-bottom: 16px;
 }
 
 .userDetailError {
     margin-top: 16px;
     color: red;
-}
-
-.userDetailBtn {
-    margin-top: 16px !important;
-}
-
-@media only screen and (max-width : 780px) {
-    .userDetailContainer {
-        width: 90%;
-    }
 }

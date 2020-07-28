@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './listUsers.scss';
 import UserItem from './UserItem';
-import Logout from './../../containers/Logout';
+import Header from './../../containers/Header';
 
 export default function ListUsers(props){
 
-	const { loading, error, users, token, getUsers } = props;
+	const { loading, error, users, getUsers } = props;
 
 	useEffect(() => {
-        if (token) getUsers()
-	}, [token, getUsers])
+       getUsers()
+	}, [getUsers])
 
 	const rednerData = [];
 
@@ -22,19 +21,16 @@ export default function ListUsers(props){
 		});
 	}
 	  
-	return token === null ?
-		<Redirect to='/login' /> :
-		(
-			loading ? 
+	return loading ? 
 				<div className='loader'><CircularProgress /></div>
 			: (
-				<div className='list'>
-					{rednerData}
-					{error}
-					<Logout />
+				<div>
+					<Header history={props.history}/>
+					<div className='list'>
+						{rednerData}
+						{error}
+					</div>
 				</div>
-			)
-
-	);
+			);
 	
 }
