@@ -4,8 +4,9 @@ import store from './store';
 import { Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import ListUsers from './containers/ListUsers';
-import UserDetail from './containers/UserDetail';
+import Dashboard from './containers/Dashboard';
+import NoteDetail from './containers/NoteDetail';
+import AddNote from './containers/AddNote';
 
 class App extends Component {
     render() {
@@ -13,9 +14,10 @@ class App extends Component {
             <Provider store={store}>
                 <div className="App">
                     <Router history={createBrowserHistory()}>
-                        <Route exact path='/' component={ListUsers} /> {/* esta primera ruta debería de ser un login */}
-                        <Route path='/listUsers' component={ListUsers} />
-                        <Route path='/userDetail' component={UserDetail} />
+                        <Route exact path='/' component={Dashboard} />
+                        <Route path='/dashboard' component={Dashboard} />
+                        <Route path='/noteDetail' component={NoteDetail} />
+                        <Route path='/addNote' component={AddNote} />
                     </Router>
                 </div>
             </Provider>

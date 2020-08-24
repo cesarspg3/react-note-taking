@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import listUsers from './listUsers';
-import userDetail from './userDetail';
+import dashboard from './dashboard';
 import router from './router';
 
 export default combineReducers({
-    listUsers,
-    userDetail,
+    dashboard,
     router
 });

@@ -1,0 +1,46 @@
+.noteItem-Container {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 8px 16px 8px;
+    padding: 8px;
+    cursor: pointer;
+    text-decoration:none;
+    color: black;
+    border-radius: 5px;
+    width: calc(100% - 32px);
+}
+    .noteItem-Container:hover {
+        opacity: 0.7;
+    }
+
+.noteItem-yellow {
+    background-color: #ffff82;
+}
+
+.noteItem-green {
+    background-color: #79ff79;
+}
+
+.noteItem-red {
+    background-color: #ff5a5a;
+}
+
+.noteItem-pink {
+    background-color: #fee0e5;
+}
+
+.noteItem-blue {
+    background-color: #a1e7fe;
+}
+
+.noteItem-title {
+    font-weight: bold;
+    font-size: 18px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.noteItem-text {
+    margin-top: 4px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}

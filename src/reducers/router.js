@@ -1,10 +1,10 @@
 import * as actionTypes from '../actions/types';
 
 const initialState = {
-    route: 'listUsers',
+    route: 'dashboard',
 };
 
-const goBack = (state, {route}) => ({
+const goTo = (state, {route}) => ({
     ...state,
     route
 });
@@ -13,7 +13,7 @@ const goBack = (state, {route}) => ({
 export default function(state = initialState, action) {
     switch (action.type) {
     case actionTypes.GO_TO:
-        return goBack(state, action);
+        return goTo(state, action);
 
     default: return state;
     }

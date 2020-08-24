@@ -1,4 +1,4 @@
-.headerContainer {
+.header-Container {
     display: flex;
     align-items: center;
     padding: 20px;
@@ -6,9 +6,9 @@
     color: #F8F8F8;
 }
 
-.headerGoHome {
+.header-GoHome {
     cursor: pointer;
 }
-    .headerGoHome:hover {
+    .header-GoHome:hover {
         opacity: 0.5;
     }

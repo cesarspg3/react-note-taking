@@ -6,19 +6,19 @@ import './header.scss';
 export default function Header(props){
 
         const { goTo, history, route } = props;
-        const goHome = () => {
-                history.push('/listUsers')
-                goTo('listUsers');
+        const goDashboard = () => {
+                history.push('/dashboard')
+                goTo('dashboard');
         }
 
 	return (
-        <Grid container className='headerContainer'>
+        <Grid container className='header-Container'>
             <Grid item xs={11}>
-            	Prueba Nivel Front Inveert
+                Note taking code test
             </Grid>
-            {route === 'userDetail' ? 
-                <Grid item xs={1} onClick={goHome} className='headerGoHome'>
-                    Volver
+            {route !== 'dashboard' ? 
+                <Grid item xs={1} onClick={goDashboard} className='header-GoHome'>
+                    Back
                 </Grid>
 			:
 			<Grid item xs={1}></Grid>

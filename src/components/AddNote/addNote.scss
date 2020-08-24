@@ -1,0 +1,80 @@
+.addNote-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 66px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0px -2px 8px rgba(0,0,0,0.1);
+}
+
+.addNote-title {
+    padding: 16px;
+    font-weight: bold;
+}
+
+.addNote-chooseColorTxt {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
+
+.addNote-chooseColorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addNote-colorBox {
+    width: 26px;
+    height: 26px;
+    border-radius:5px;
+    margin-left: 16px;
+}
+    .addNote-colorBox:hover {
+        opacity: 0.5;
+        border: 2px solid black;
+        width: 22px;
+        height: 22px;
+    }
+.addNote-colorBoxSelected {
+    border: 2px solid black;
+    width: 22px;
+    height: 22px;
+}
+
+.addNote-yellow {
+    background-color: #ffff82;
+}
+.addNote-green {
+    background-color: #79ff79;
+}
+.addNote-red {
+    background-color: #ff5a5a;
+}
+.addNote-pink {
+    background-color: #fee0e5;
+}
+.addNote-blue {
+    background-color: #a1e7fe;
+}
+
+.addNote-input {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+    margin-bottom: 8px !important;
+    width: calc(100% - 32px) !important;
+}
+
+.addNote-sendBtnContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px;
+    padding-top: 8px;
+}
+
+@media only screen and (max-width : 780px) {
+    .addNote-container {
+        width: 90%;
+    }
+}
